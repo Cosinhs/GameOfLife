@@ -1,5 +1,5 @@
 var cellSize = 20;
-var probabilityOfAliveAtStart = 0.3;
+var probabilityOfAliveAtStart = 0.5;
 var alive = "darkgreen";
 var dead = "black";
 var ctx = document.getElementById('game').getContext('2d');
