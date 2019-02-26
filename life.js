@@ -2,9 +2,13 @@ var cellSize = 20;
 var probabilityOfAliveAtStart = 0.5;
 var alive = "darkgreen";
 var dead = "black";
-var ctx = document.getElementById('game').getContext('2d');
-var width = document.getElementById('game').width / cellSize;
-var height = document.getElementById('game').height / cellSize;
+var frameRate = 10;
+var width = ~~(innerWidth / cellSize);
+var height = ~~(innerHeight / cellSize);
+gameCanvas = document.getElementById("game");
+gameCanvas.width = width * cellSize;
+gameCanvas.height = height * cellSize;
+var ctx = gameCanvas.getContext('2d');
 
 var drawCell = (ctx, i, j, color)=> {
 	ctx.fillStyle = color;
@@ -53,4 +57,4 @@ function update() {
 	}
 }
 
-setInterval(update, 100);
+setInterval(update, 1000/frameRate);
